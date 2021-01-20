@@ -1,0 +1,201 @@
+let angle = 0
+let x = 0
+let y = 0
+let m = 0
+let n = 0
+let a = 1
+let b = 1
+let z = 0
+let w = 0
+let s = 0
+let k = 0
+
+function setup() {
+  createCanvas(378, 480);
+}
+
+function draw() {
+  noStroke()
+  background(220)
+
+  //big blue ellipse
+  fill(23, 138, 252)
+  ellipse(111, 171, 267, 267)
+
+  //black rectangles (below)
+  fill(0)
+  beginShape()
+  vertex(133, 415)
+  vertex(314, 453)
+  vertex(309.3, 474)
+  vertex(128.2, 438)
+  endShape()
+
+  beginShape()
+  vertex(130.3, 175.6)
+  vertex(116, 172.2)
+  vertex(52.7, 480)
+  vertex(67.5, 480)
+  endShape()
+
+  beginShape()
+  vertex(58.5, 211.5)
+  vertex(63, 195.6)
+  vertex(378, 260)
+  vertex(378, 276)
+  endShape()
+
+  //red rectangle
+  fill(180, 0, 48)
+  beginShape()
+  vertex(190.5, 138)
+  vertex(267, 153)
+  vertex(209, 431)
+  vertex(133, 415)
+  endShape()
+
+  //yellow rectangle
+  fill(212, 152, 0)
+  beginShape()
+  vertex(286, 5.5)
+  vertex(339, 15)
+  vertex(274.5, 315.45)
+  vertex(223, 305)
+  endShape()
+
+  //two green rectangles
+  beginShape()
+  vertex(189.5, 375)
+  vertex(178, 424.3)
+  vertex(314, 452.8)
+  vertex(325.5, 405)
+  endShape()
+
+  //Rotate
+  push()
+  translate(156.75, 93.475)
+  rotate(angle)
+  translate(-156.75, -93.475)
+
+  //black rectangle
+  fill(0)
+  beginShape()
+  vertex(156, 79.35)
+  vertex(163.5, 81.2)
+  vertex(157.5, 107.6)
+  vertex(150, 106.1)
+  endShape()
+
+  //green rectangle  
+  fill(0, 159, 192)
+  beginShape()
+  vertex(288, 106)
+  vertex(163.5, 81.2)
+  vertex(157.5, 107.6)
+  vertex(282, 132)
+  endShape()
+  //red ellipse
+  fill(180, 0, 48)
+  ellipse(305, 121, 55, 55)
+
+  angle = angle + 0.02
+  pop()
+
+  //Larger
+  //small blue sllipse
+  push()
+  translate(316, 380)
+  scale(1 * b)
+  fill(23, 138, 252)
+  ellipse(0, 0, 110, 110)
+  pop()
+  b = b + 0.01
+  if (b > 2) {
+    b = b - 2
+  }
+
+  //Motion1
+  scale(1 * a)
+  fill(0)
+  translate(x, y)
+
+  beginShape()
+  vertex(191, 17.3)
+  vertex(189.5, 22.3)
+  vertex(346, 51.8)
+  vertex(348, 47)
+  endShape()
+
+  beginShape()
+  vertex(238.5, 39)
+  vertex(358.5, 63)
+  vertex(357.5, 67)
+  vertex(238, 43)
+  endShape()
+
+  beginShape()
+  vertex(283.5, 63.6)
+  vertex(282, 67.4)
+  vertex(372, 85)
+  vertex(373, 81)
+  endShape()
+
+  x = x - 1
+
+  // Motion2
+  // black rectangles (top)
+  translate(m, n)
+  fill(0)
+  beginShape()
+  vertex(220.2, 317.5)
+  vertex(223, 305)
+  vertex(328.5, 326.5)
+  vertex(326, 338)
+  endShape()
+
+  beginShape()
+  vertex(69, 235.5)
+  vertex(66.5, 246)
+  vertex(228, 280.5)
+  vertex(229.8, 270.3)
+  endShape()
+
+  beginShape()
+  vertex(189.5, 375)
+  vertex(191, 369.5)
+  vertex(378, 409.5)
+  vertex(378, 416)
+  endShape()
+
+  beginShape()
+  vertex(21, 453)
+  vertex(19.5, 463)
+  vertex(113, 480)
+  vertex(153, 480)
+  endShape()
+
+  m = m + 1
+  a = a + 0.01
+
+  resetMatrix()
+  //boumcing ball
+  //yellow ellipse
+  fill(212, 152, 0)
+  ellipse(129 + z, 150 + w, 55, 55)
+  z = z - 0.32
+  w = w + 1.6
+  if (w > 330) {
+    z = 0
+    w = 0
+  }
+
+  //green ellipse
+  fill(0, 159, 192)
+  ellipse(35 + s, 198 + k, 55, 55)
+  s = s + 1.65
+  k = k + 0.3
+  if (s > 343) {
+    s = 0
+    k = 0
+  }
+}

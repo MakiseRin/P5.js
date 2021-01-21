@@ -1,0 +1,51 @@
+var song
+let a=1
+let color=0
+let ground=0
+let x=200
+let y=100
+function preload(){
+song = loadSound('http://m10.music.126.net/20210122011408/d73f0d559794cd3a8a691c075634b915/ymusic/3482/b1ed/fdcc/14d3a6fbbaf78fe9bbe91e9dd6d92caa.mp3')
+}
+
+function setup() {
+  createCanvas(400, 400);
+  song.play()
+}
+
+function draw() {
+  background(ground)
+  ground=ground+2.3;
+  
+  resetMatrix()
+  fill(0,0,255)
+  rect(160,160,x,y)
+  x=x-3
+  y=y-3
+  if(x>300)
+    x=200
+  if(y>200)
+    y=100
+  
+  push()
+  scale(1*a)
+  fill(255,0,0)
+  noStroke()
+  ellipse(100,100,100,100)
+  a=a+0.04
+  if(a>=3){
+    a=3
+  }
+  pop()
+  
+  fill(0,0,color)
+  noStroke()
+  ellipse(300,50,80,80)
+  color=color+3
+  
+  fill(random(10,255),200,random(30,255))
+  randomD = random(10,30)
+  ellipse(40,340,randomD,randomD)
+  ellipse(40,380,randomD,randomD)
+  ellipse(80,380,randomD,randomD)
+}

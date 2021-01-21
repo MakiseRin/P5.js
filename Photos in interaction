@@ -1,0 +1,36 @@
+let img;
+let img2
+let x=0
+let y=0
+let m=0
+let n=0
+let a=1000
+let b=1000
+function preload(){
+  img = loadImage('https://i.loli.net/2021/01/21/3rzWCStF6IxJEqe.jpg')
+  img2 = loadImage('https://i.loli.net/2021/01/21/G7JzUjACasXbpOv.jpg')
+  img3=loadImage('https://i.loli.net/2021/01/21/ebaSAVGhOYZd4nr.jpg')
+}
+function setup() {
+  createCanvas(540, 540);
+  background(0);
+}
+
+function draw() {
+  scale(0.5)
+  image(img2,m,n)
+  image(img,x,y)
+  image(img3,a,b)
+}
+
+function mousePressed(){
+  x=1000
+  y=1000
+}
+
+function mouseReleased(){
+  m=1000
+  n=1000
+  a=0
+  b=0
+}
